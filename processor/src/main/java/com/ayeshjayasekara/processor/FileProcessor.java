@@ -13,9 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 
 @Data
+@SuppressWarnings("squid:S3740")
 public class FileProcessor {
 
-    public static final String FILE_PATH = "/home/ayesh/Desktop/statistics.log";
     private final BufferedReader reader;
 
     public FileProcessor(String absoluteFilePath) throws FileNotFoundException {
@@ -45,7 +45,7 @@ public class FileProcessor {
 
     private HashMap<String, String> decodeUpTime(String line){
         String[] upTimeComponents = line.split(":");
-        HashMap<String, String> componentsMap = new HashMap<String, String>();
+        HashMap<String, String> componentsMap = new HashMap<>();
         componentsMap.put("time", readTime(upTimeComponents));
 
         String[] cpuComponents = upTimeComponents[upTimeComponents.length - 1].split(",");
@@ -67,7 +67,7 @@ public class FileProcessor {
     private HashMap<String, String> decodeMainMemory(String line){
         String memoryString = line.replaceAll(" +", ",");
         String[] memoryComponents = memoryString.split(",");
-        HashMap<String, String> memoryComponentMap = new HashMap<String, String>();
+        HashMap<String, String> memoryComponentMap = new HashMap<>();
         memoryComponentMap.put("available_memory", availableMemory(memoryComponents));
         memoryComponentMap.put("total_memory", totalMemory(memoryComponents));
         memoryComponentMap.put("used_memory", usedMemory(memoryComponents));
@@ -78,7 +78,7 @@ public class FileProcessor {
     private HashMap<String, String> decodeSwapMemory(String line){
         String memoryString = line.replaceAll(" +", ",");
         String[] memoryComponents = memoryString.split(",");
-        HashMap<String, String> memoryComponentMap = new HashMap<String, String>();
+        HashMap<String, String> memoryComponentMap = new HashMap<>();
         memoryComponentMap.put("total_swap_memory", totalSwapMemory(memoryComponents));
         memoryComponentMap.put("used_swap_memory", usedSwapMemory(memoryComponents));
         memoryComponentMap.put("free_swap_memory", freeSwapMemory(memoryComponents));
@@ -114,7 +114,7 @@ public class FileProcessor {
         return memoryComponents[memoryComponents.length -1 ];
     }
 
-    public void process(){
+    public void process(String csvPath){
 
         try {
 
@@ -133,16 +133,12 @@ public class FileProcessor {
             closeReader();
 
 
-            Writer writer = new FileWriter("/home/ayesh/Desktop/yourfile.csv");
+            Writer writer = new FileWriter(csvPath);
             StatefulBeanToCsv beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
             beanToCsv.write(recordModelList);
             writer.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (CsvRequiredFieldEmptyException e) {
-            e.printStackTrace();
-        } catch (CsvDataTypeMismatchException e) {
+        } catch (IOException | CsvRequiredFieldEmptyException | CsvDataTypeMismatchException e) {
             e.printStackTrace();
         }
 

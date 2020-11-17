@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ayeshjayasekara</groupId>
+    <artifactId>Javalyzer</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <name>Javalyzer</name>
+
+    <developers>
+        <developer>
+            <name>Ayesh Jayasekara</name>
+            <email>ejkpac@gmail.com</email>
+            <organization>WSO2Telco</organization>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>executor</module>
+        <module>processor</module>
+        <module>cpu-visualizer</module>
+        <module>memory-visualizer</module>
+        <module>commons</module>
+    </modules>
+
+</project>
