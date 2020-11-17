@@ -159,3 +159,10 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,intellij,git
+/commons/commons.iml
+/cpu-visualizer/cpu-visualizer.iml
+/executor/executor.iml
+/.idea/
+/Javalyzer.iml
+/memory-visualizer/memory-visualizer.iml
+/processor/processor.iml
