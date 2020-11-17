@@ -31,6 +31,7 @@ public class CPUGraphProcessor extends Application{
         final LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
         yAxis.setLabel("CPU LOADING (%)");
         xAxis.setLabel("Time");
+        lineChart.setCreateSymbols(false);
         lineChart.setTitle("CPU Load Over Time");
 
         XYChart.Series series = new XYChart.Series();

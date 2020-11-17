@@ -29,6 +29,30 @@ Run the CPU Visualizer / Memory Visualizer Modules as needed.
 </li>
 </ul>
 
+---
+**NOTE**
+
+Since the JavaFx packages are no longer bundled with the JRE, you will have to manually download the required packages
+
+Steps are:
+
+<ul>
+
+<li>
+Download the required libraries from : <a href="https://gluonhq.com/products/javafx/"> OpenJFX</a> (Tested with 11.0.2)
+</li>
+
+<li>
+OpenJDK 11 has to be used.
+</li>
+
+<li>
+java -p <<>JAVA FX HOME<<>/lib --add-modules javafx.controls -jar <<>jar name<<>.jar <<>absolute path to<<>/javalyzer.properties
+</li>
+</ul>
+
+---
+
 ### Roadmap
 
 You are most certainly welcome to contribute! Fork your own copy to get started. Don't forget to show some love! 

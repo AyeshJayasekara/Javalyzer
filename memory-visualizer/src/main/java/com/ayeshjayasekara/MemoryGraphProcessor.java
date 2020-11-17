@@ -32,6 +32,7 @@ public class MemoryGraphProcessor extends Application{
         final LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
         yAxis.setLabel("Usage in Megabytes");
         xAxis.setLabel("Time");
+        lineChart.setCreateSymbols(false);
         lineChart.setTitle("Memory Usage Over Time");
 
         XYChart.Series series = new XYChart.Series();
