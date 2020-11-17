@@ -8,8 +8,18 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <name>Common Dependencies</name>
 
     <artifactId>commons</artifactId>
+
+    <developers>
+        <developer>
+            <name>Ayesh Jayasekara</name>
+            <email>ejkpac@gmail.com</email>
+            <organization>WSO2Telco</organization>
+        </developer>
+    </developers>
+
     <build>
         <plugins>
             <plugin>
