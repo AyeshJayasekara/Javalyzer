@@ -40,7 +40,7 @@ public class CPUGraphProcessor extends Application{
         XYChart.Series last15 = new XYChart.Series();
 
 
-        series.setName("Main Memory");
+        series.setName("CPU Load Averages");
         last5.setName("Load Average (Recent 5 Minutes)");
         last1.setName("Load Average (Recent 1 Minute)");
         last15.setName("Load Average (Recent 15 Minutes)");
